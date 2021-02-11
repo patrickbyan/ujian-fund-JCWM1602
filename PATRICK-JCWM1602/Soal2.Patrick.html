@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Soal 2 Patrick</title>
+    </head>
+    <body>
+        <h1>DERET FIBONANCI</h1>
+        <h4>Masukan angka:</h4>
+        <input type="number" name="" id='number' placeholder="masukan angka">
+        <br><br>
+        <input type="button" value="SHOW" class="buttons-result">
+        <input type="button" value="GANJIL" class="buttons-result">
+        <input type="button" value="GENAP" class="buttons-result">
+        <h1 id="hasil"></h1>
+    </body>
+    <script>
+        // program menerima input berupa angka positif dan angka input menjadi batas/limit
+        // dari nilai deret fibonanci terakhir. jika tombol
+        // SHOW, GANJIL, GENAP ditekan maka program akan menampilkan
+        // CTH: 100, show, result: 0,1,1,2,3,5,8,13,21,34,55,89
+        // CTH:100 , ganjil, result: 1+1+3+5+13+21+55+89 = 188
+        // CTH:100, genap, result:0+2+8+34=44
+        
+        let buttons = document.getElementsByClassName('buttons-result')
+        buttons[0].addEventListener('click', function(){return operation('show')})
+        buttons[1].addEventListener('click', function(){return operation('ganjil')})
+        buttons[2].addEventListener('click', function(){return operation('genap')})
+
+        function operation(tombol){
+            let result = 0
+            let hasilShow = 0
+            let angka = document.getElementById('number').value
+
+            arrShow = [0, 1, 2]
+            arrShowUpdate = []
+            arrLength = arrShow.length
+            arrShowUpdateLenght = arrShowUpdate.length
+            let angkaI = arrShow[arrLength-1] // 3
+            let angkaJ = arrShow[arrLength-2] // 2
+
+            if(angka > 0){
+                if(tombol == 'show'){                    
+                    if(angkaI < 3){
+                        for(i = 0; i < angka; i++){
+                            
+                            hasilShow = angkaI + angkaJ
+                            result += hasilShow // 3 + 2 = 5
+                            arrShow.push(result) // 5  
+                        }       
+                    }else{
+                        for(i = 0; i < angka; i++){
+                            angkaI = arrShow[arrShowUpdateLenght-1] // 3
+                            angkaJ = arrShow[arrShowUpdateLenght-2] // 2
+                            
+                            hasilShow = angkaI + angkaJ
+                            result += hasilShow // 3 + 2 = 5
+                            arrShowUpdate.push(result) // 5
+                            }
+                        }
+                    }
+
+                }else if(tombol == 'ganjil'){
+                    result = 20
+                }else if(tombol == 'genap'){
+                    result = 30
+                }
+                
+            
+            // console.log(arrShow)
+            
+            let h3 = document.getElementById('hasil')
+            h3.innerHTML = arrShow
+
+            }else{
+                alert('Inputan harus angka!')
+            }
+        }
+    </script>
+</html>

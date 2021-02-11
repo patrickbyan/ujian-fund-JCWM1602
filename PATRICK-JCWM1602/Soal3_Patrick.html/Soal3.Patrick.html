@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Tabel dan Fitur</title>
+    <style>
+        input{
+            padding: 10px
+        }
+
+        #table-datauser{
+            width: 75%;
+            border: 1px solid #16c79a
+        }
+
+        #table-datauser thead{
+            background-color: #16c79a;
+            font-size: 16px;
+            color: #f8f1f1;
+        }
+
+        #table-datauser tr, td{
+            border: 1px solid #16c79a
+        }
+    </style>
+</head>
+<body>
+    <h1 id="FORM USERS"></h1>
+    <br><br>
+    <input type="text" name="" class="input-dataUser" id="username" placeholder="username"><input type="text" name="" class="input-dataUser" id="email" placeholder="email">
+    <p>role</p>
+    <select id="role" class="input-dataUser">
+        <option value="user">user</option>
+        <option value="admin">admin</option>
+    </select>
+    <br><br>
+    <input type="button" id="button-submit" value="ADD USER">
+    <br><br>
+    <h1 id="USER DATA"></h1>
+    <br><br>
+    <table id="table-datauser">
+        <thead> <!-- Table Header -->
+            <tr> <!-- Table Row -->
+                <th>No.</th> <!-- Table Column -->
+                <th>username</th>
+                <th>email</th>
+                <th>role</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+             <!-- link to Database -->
+        </tbody>
+    </table>
+    
+</body>
+<script src="database.js"></script>>
+<script src="operation.js"></script>>
+</html>
